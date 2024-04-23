@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="style.css" rel="stylesheet">
+<title></title>
+
+</head>
+<body>
+    <div class="bg">
+    
+    <div class="title"><h2>Make Your Own Multiplication Table</h2></div>
+    <label for="start">Length of first side:</label>
+        <input type="number" id="first" min="2" max="10">
+    <label for="end">Length of other side:</label>
+        <input type="number" id="last" min="2" max="10">
+<button onclick="makeTable()">Get your table!</button>
+<div id="tableContainer"></div>
+</div>
+</body>
+
+<script>
+function makeTable() {
+    var lengthOne = parseInt(document.getElementById("first").value);
+    var lengthOther = parseInt(document.getElementById("last").value);
+
+    if (lengthOne < 2 || lengthOne > 10 || lengthOther < 2 || lengthOther > 10) {
+        alert("Please enter numbers between 2 and 10");
+        return;
+    }
+
+    var table = document.createElement("table");
+    var caption = table.createCaption();
+    for (var num1 = 1; num1 <= lengthOther; num1++) {
+        var row = table.insertRow();
+        for (var num2 = 1; num2 <= lengthOther; num2++) {
+            var cell = row.insertCell();
+            if (num1 == lengthOne - 1) {
+                cell.textContent = num2
+            } else if (num2 == lengthOne - 1) {
+                cell.textContent = num2;
+            } else {
+                cell.textContent = num1 * num2;
+            }
+        }
+    }
+    tableContainer.appendChild(table);} //"table" is being appended under tableContainer, or it will be inside a bigger container
+
+</script>
+</body>
+</html>

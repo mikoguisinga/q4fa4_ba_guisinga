@@ -1,0 +1,24 @@
+*{
+    padding:2;
+    margin:0;
+}
+table, th, td {
+    border: 3px solid rgb(0, 57, 143);
+    padding: 5px;
+}
+.bg{
+    background-image: url(webcam-toy-photo2.jpg);
+    font-family:'Courier New', Courier, monospace;
+    color:rgb(0, 45, 128);
+    text-align: center;
+    max-width:2000;
+    
+}
+button{
+    border: 1px black;
+    border-radius: 10%;
+}
+title{
+    border: 1px black;
+    border-radius: 10%;
+}
